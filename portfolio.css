@@ -1,0 +1,317 @@
+
+:root {
+    --primary-color: #3f51b5; 
+    --secondary-color: #ff9800; 
+    --text-color: #333;
+    --bg-color: #f4f4f9;
+    --card-bg: #ffffff;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Global Reset and Typography */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* Header & Navigation Styling */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    position: sticky; /* Makes header stick to the top */
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 800;
+}
+
+header .logo p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 3px;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Main Content Layout */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 5%;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.8em;
+    margin-bottom: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Card and Grid Layouts */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 1.4em;
+}
+
+/* Project Card Specific Styling */
+.project-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+.project-card p {
+    min-height: 50px; /* Ensures all project cards are the same height */
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #303f9f; /* Darker primary color */
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #fb8c00; /* Darker secondary color */
+}
+
+.large-btn {
+    padding: 15px 30px;
+    font-size: 1.1em;
+}
+
+/* About Me Styling */
+#about p {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.15em;
+    color: #555;
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 60px;
+    font-size: 0.9em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 5%;
+    }
+
+    .contact-info {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info a {
+        margin: 5px 0;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Simple fade-in animation for flair */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInAnimation 1s ease-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================================== */
+/* NEW STYLES for the Contact Page */
+/* =================================== */
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.contact-info-block, .contact-form-container {
+    flex: 1 1 45%; /* Allows sections to take up half space on desktop */
+    min-width: 300px;
+}
+
+/* Styling for the contact form */
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 152, 0, 0.5);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Styling for the info block */
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.info-item .icon {
+    font-size: 1.5em;
+    color: var(--secondary-color);
+    margin-right: 15px;
+}
+
+.info-item h4 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.info-item a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
